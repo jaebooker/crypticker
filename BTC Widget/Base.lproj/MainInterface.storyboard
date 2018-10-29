@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="M4Y-Lb-cyx">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Today View Controller-->
+        <scene sceneID="cwh-vc-ff4">
+            <objects>
+                <viewController id="M4Y-Lb-cyx" customClass="TodayViewController" customModule="BTC_Widget" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" simulatedAppContext="notificationCenter" id="S3S-Oj-5AN">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="110"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$592.12" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TBU-bl-HLU">
+                                <rect key="frame" x="0.0" y="0.0" width="131" height="43"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                <color key="textColor" red="0.92549020049999997" green="0.2407452856" blue="0.24797359790000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+1.23" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Ql-W8-5Cb">
+                                <rect key="frame" x="231" y="0.0" width="89" height="43"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                <color key="textColor" red="0.090366499750899137" green="0.40341645077720212" blue="0.091366292393287293" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="buo-BB-m1P" userLabel="Line Chart View" customClass="JBBarChartView">
+                                <rect key="frame" x="0.0" y="43" width="320" height="67"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="8Ql-W8-5Cb" firstAttribute="top" secondItem="ssy-KU-ocm" secondAttribute="top" id="87h-6g-4eb"/>
+                            <constraint firstItem="TBU-bl-HLU" firstAttribute="top" secondItem="ssy-KU-ocm" secondAttribute="top" id="Aze-vF-fUX"/>
+                            <constraint firstItem="buo-BB-m1P" firstAttribute="trailing" secondItem="ssy-KU-ocm" secondAttribute="trailing" id="LZy-9l-0Ok"/>
+                            <constraint firstItem="buo-BB-m1P" firstAttribute="bottom" secondItem="ssy-KU-ocm" secondAttribute="bottom" id="Wkd-DE-zZz"/>
+                            <constraint firstItem="buo-BB-m1P" firstAttribute="leading" secondItem="ssy-KU-ocm" secondAttribute="leading" id="XvP-f4-vXa"/>
+                            <constraint firstItem="buo-BB-m1P" firstAttribute="top" secondItem="TBU-bl-HLU" secondAttribute="bottom" id="fNH-3K-2Jz"/>
+                            <constraint firstItem="TBU-bl-HLU" firstAttribute="leading" secondItem="ssy-KU-ocm" secondAttribute="leading" id="hDg-bb-LSP"/>
+                            <constraint firstItem="8Ql-W8-5Cb" firstAttribute="trailing" secondItem="ssy-KU-ocm" secondAttribute="trailing" id="qwm-Fg-M99"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ssy-KU-ocm"/>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="110"/>
+                    <connections>
+                        <outlet property="priceChangeLabel" destination="8Ql-W8-5Cb" id="1OO-dl-pay"/>
+                        <outlet property="priceLabel" destination="TBU-bl-HLU" id="RE2-43-TPZ"/>
+                        <outlet property="view" destination="buo-BB-m1P" id="Hnn-SH-Se0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vXp-U4-Rya" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="140.80000000000001" y="133.13343328335833"/>
+        </scene>
+    </scenes>
+</document>
