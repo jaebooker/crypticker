@@ -17,6 +17,13 @@ class TodayViewController: CurrencyDataViewController, NCWidgetProviding{
         
         priceLabel.text = "--"
         priceChangeLabel.text = "--"
+        
+        extensionContext?.widgetLargestAvailableDisplayMode = .expanded
+    }
+    
+    func widgetActiveDisplayModeDidChange(_ activeDisplayMode: NCWidgetDisplayMode, withMaximumSize maxSize: CGSize) {
+        let expanded = activeDisplayMode == .expanded
+        preferredContentSize = expanded ? CGSize(width: maxSize.width, height: 200) : maxSize
     }
         
     func widgetPerformUpdate(completionHandler: (@escaping (NCUpdateResult) -> Void)) {
@@ -37,6 +44,10 @@ class TodayViewController: CurrencyDataViewController, NCWidgetProviding{
                 self.updatePriceHistoryLineChart()
             }
         }
+    }
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        updatePriceHistoryLineChart()
     }
     
 }
